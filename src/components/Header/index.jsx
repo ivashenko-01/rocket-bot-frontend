@@ -25,7 +25,11 @@ export const Header = () => {
           <Link className={styles.logo} to="/">
             <div>ROCKET BOT</div>
           </Link>
+          <Link to="/office">
+            <Button variant="outlined">Личный кабинет</Button>
+          </Link>
           <div className={styles.buttons}>
+
             {isAuth ? (
               <>
                 <Link to="/add-post">
@@ -45,6 +49,7 @@ export const Header = () => {
                 </Link>
               </>
             )}
+
           </div>
         </div>
       </Container>

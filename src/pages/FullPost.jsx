@@ -37,7 +37,7 @@ export const FullPost = () => {
               user= {data.user}
               createdAt={data.createdAt}
               viewsCount={data.viewsCount}
-              commentsCount={3}
+              commentsCount={obj.commentCount}
               tags={data.tags}
         isFullPost
       >
