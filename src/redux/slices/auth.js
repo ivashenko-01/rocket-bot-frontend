@@ -17,11 +17,6 @@ export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
 })
 
 
-export const fetchPodpiska = createAsyncThunk('auth/fetchPodpiska', async (params) => {
-    const { data } = await axios.get('/podpiska', params);
-    return data;
-})
-
 
 
 
@@ -75,19 +70,6 @@ const authSlice = createSlice({
             state.data = action.payload;
         },
         [fetchRegister.rejected]: (state) => {
-            state.status = 'error';
-            state.data = null;
-        },
-
-        [fetchPodpiska.pending]: (state) => {
-            state.status = 'loading';
-            state.data = null;
-        },
-        [fetchPodpiska.fulfilled]: (state, action) => {
-            state.status = 'loaded';
-            state.data = action.payload;
-        },
-        [fetchPodpiska.rejected]: (state) => {
             state.status = 'error';
             state.data = null;
         },
