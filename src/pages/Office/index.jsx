@@ -5,7 +5,6 @@ import { CommentsBlock } from "../../components/CommentsBlock";
 import axios from '../../axios';
 import ReactMarkdown from "react-markdown";
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsAuth } from '../../redux/slices/auth';
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -13,6 +12,8 @@ import styles from "./Office.module.scss";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
+import { fetchAuth, selectIsAuth } from '../../redux/slices/auth'
+
 
 export const Office = () => {
 
@@ -30,6 +31,8 @@ export const Office = () => {
     }, 
     mode: 'onChange',
   })
+
+  const dispatch = useDispatch();
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
