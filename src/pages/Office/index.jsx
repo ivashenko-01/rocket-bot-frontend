@@ -6,7 +6,7 @@ import { CommentsBlock } from "../components/CommentsBlock";
 import axios from "../axios";
 import ReactMarkdown from "react-markdown";
 
-export const FullPost = () => {
+export const Office = () => {
 
   const [data, setData] = React.useState();
   const [isLoading, setLoading] = React.useState(true);
