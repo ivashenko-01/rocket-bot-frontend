@@ -27,7 +27,7 @@ export const Podpiska = () => {
     console.log(data);
 
     if(!data.payload){
-      return alert('Не удалось авторизоваться');
+      return alert('Не удалось зарегистрировать подписку');
     }
 
     if('token' in data.payload){

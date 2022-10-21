@@ -17,8 +17,8 @@ export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
 })
 
 
-export const fetchPodpiska = createAsyncThunk('auth/fetchPodpiska', async () => {
-    const { data } = await axios.get('/podpiska');
+export const fetchPodpiska = createAsyncThunk('auth/fetchPodpiska', async (params) => {
+    const { data } = await axios.get('/podpiska', params);
     return data;
 })
 
