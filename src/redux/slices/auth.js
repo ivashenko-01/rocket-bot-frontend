@@ -16,10 +16,6 @@ export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
     return data;
 })
 
-export const fetchOfficeMe = createAsyncThunk('office/fetchOfficeMe', async () => {
-    const { data } = await axios.get('/office');
-    return data;
-})
 
 
 
@@ -77,18 +73,6 @@ const authSlice = createSlice({
             state.data = null;
         },
 
-        [fetchOfficeMe.pending]: (state) => {
-            state.status = 'loading';
-            state.data = null;
-        },
-        [fetchOfficeMe.fulfilled]: (state, action) => {
-            state.status = 'loaded';
-            state.data = action.payload;
-        },
-        [fetchOfficeMe.rejected]: (state) => {
-            state.status = 'error';
-            state.data = null;
-        },
     }
 })
 
