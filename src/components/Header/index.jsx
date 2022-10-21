@@ -25,16 +25,17 @@ export const Header = () => {
           <Link className={styles.logo} to="/">
             <div>ROCKET BOT</div>
           </Link>
-          <Link to="/office">
-            <Button variant="outlined">Личный кабинет</Button>
-          </Link>
           <div className={styles.buttons}>
 
             {isAuth ? (
               <>
+                <Link to="/office">
+                  <Button variant="outlined">Личный кабинет</Button>
+                </Link>
                 <Link to="/add-post">
                   <Button variant="contained">Написать статью</Button>
                 </Link>
+                
                 <Button onClick={onClickLogout} variant="contained" color="error">
                   Выйти
                 </Button>
