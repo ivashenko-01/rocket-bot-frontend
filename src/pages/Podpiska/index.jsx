@@ -86,9 +86,9 @@ export const Podpiska = () => {
       <TextField 
         className={styles.field} 
         label="Дата выдачи" 
-        error = {Boolean(errors.date?.message)}
-        helperText= {errors.date?.message}
-        {...register('date', {required: 'Укажите: Дата выдачи'})}
+        error = {Boolean(errors.data?.message)}
+        helperText= {errors.data?.message}
+        {...register('data', {required: 'Укажите: Дата выдачи'})}
         fullWidth 
       />
 
