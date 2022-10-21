@@ -26,10 +26,14 @@ export const Header = () => {
             <div>ROCKET BOT</div>
           </Link>
           <div className={styles.buttons}>
+
             {isAuth ? (
               <>
                 <Link to="/add-post">
                   <Button variant="contained">Написать статью</Button>
+                </Link>
+                <Link to="/office">
+                  <Button variant="outlined">Личный кабинет</Button>
                 </Link>
                 <Button onClick={onClickLogout} variant="contained" color="error">
                   Выйти
@@ -45,6 +49,7 @@ export const Header = () => {
                 </Link>
               </>
             )}
+
           </div>
         </div>
       </Container>
