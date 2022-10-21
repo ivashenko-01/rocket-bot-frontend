@@ -5,8 +5,14 @@ import { Index } from "../../components/AddComment";
 import { CommentsBlock } from "../../components/CommentsBlock";
 import axios from '../../axios';
 import ReactMarkdown from "react-markdown";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsAuth } from '../../redux/slices/auth';
+import { useNavigate, Navigate, useParams } from "react-router-dom";
 
 export const Office = () => {
+
+    
+  const isAuth = useSelector(selectIsAuth) // --- Проверка на авторизированность
 
   const [data, setData] = React.useState();
   const [isLoading, setLoading] = React.useState(true);
@@ -24,33 +30,19 @@ export const Office = () => {
       })
   }, [])
 
+  if(!window.localStorage.getItem('token') && !isAuth) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
+    return <Navigate to="/" />;
+  }
+
   if(isLoading) {
     return <Post isLoading={isLoading} isFullPost/>
   }
 
   return (
-    <>
-      <CommentsBlock
-        items={[
-          {
-            user: {
-              fullName: "Вася Пупкин",
-              avatarUrl: "https://mui.com/static/images/avatar/1.jpg",
-            },
-            text: "Это тестовый комментарий 555555",
-          },
-          {
-            user: {
-              fullName: "Иван Иванов",
-              avatarUrl: "https://mui.com/static/images/avatar/2.jpg",
-            },
-            text: "When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top",
-          },
-        ]}
-        isLoading={false}
-      >
-        <Index />
-      </CommentsBlock>
-    </>
+    <Paper classes={{ root: styles.root }}>
+      <Typography classes={{ root: styles.title }} variant="h5">
+        В разработке
+      </Typography>
+    </Paper>
   );
 };
