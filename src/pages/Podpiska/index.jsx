@@ -16,8 +16,13 @@ export const Podpiska = () => {
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
     defaultValues: {
-      email: '',
-      password: '',
+      id: '',
+      username: '',
+      guildgrope: '',
+      lvl: '',
+      data: '',
+      availability: '',
+      term: '',
     }, 
     mode: 'onChange',
   })
