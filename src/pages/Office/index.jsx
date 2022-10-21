@@ -21,6 +21,14 @@ export const Office = () => {
   const [isLoading, setLoading] = React.useState(true);
   const { id } = useParams();
 
+  const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+    }, 
+    mode: 'onChange',
+  })
+
   React.useEffect(()=>{
     axios
       .get(`/office`)
