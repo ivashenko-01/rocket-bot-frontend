@@ -11,6 +11,8 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import styles from "./Office.module.scss";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { useForm } from "react-hook-form";
 
 export const Office = () => {
 
@@ -28,6 +30,19 @@ export const Office = () => {
     }, 
     mode: 'onChange',
   })
+
+  const onSubmit = async (values) => {
+    const data = await dispatch(fetchAuth(values));
+    console.log(data);
+
+    if(!data.payload){
+      return alert('Не удалось авторизоваться');
+    }
+
+    if('token' in data.payload){
+      window.localStorage.setItem('token', data.payload.token)
+    }
+  }
 
   React.useEffect(()=>{
     axios
