@@ -36,37 +36,83 @@ export const Podpiska = () => {
   }
 
 
-  if(isAuth) {
+  if(!isAuth) {
     return <Navigate to="/" />;
   }
 
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        Вход в аккаунт
+        Регистрация подписки
       </Typography>
     <form onSubmit={handleSubmit(onSubmit)}>
 
       <TextField
         className={styles.field}
-        label="E-Mail"
-        error = {Boolean(errors.email?.message)}
-        helperText= {errors.email?.message}
-        type="email"
-        {...register('email', {required: 'Укажите почту'})}
+        label="ID пользователя"
+        error = {Boolean(errors.id?.message)}
+        helperText= {errors.id?.message}
+        {...register('id', {required: 'Укажите: ID пользователя'})}
         fullWidth
       />
 
-      <TextField className={styles.field} 
-        label="Пароль" 
-        error = {Boolean(errors.password?.message)}
-        helperText= {errors.password?.message}
-        {...register('password', {required: 'Укажите пароль'})}
+      <TextField 
+        className={styles.field} 
+        label="Имя пользователя" 
+        error = {Boolean(errors.username?.message)}
+        helperText= {errors.username?.message}
+        {...register('username', {required: 'Укажите: Имя пользователя'})}
         fullWidth 
       />
 
+      <TextField 
+        className={styles.field} 
+        label="ID гильдии" 
+        error = {Boolean(errors.guildgrope?.message)}
+        helperText= {errors.guildgrope?.message}
+        {...register('guildgrope', {required: 'Укажите: ID гильдии'})}
+        fullWidth 
+      />
+
+      <TextField 
+        className={styles.field} 
+        label="Уровень подписки" 
+        error = {Boolean(errors.lvl?.message)}
+        helperText= {errors.lvl?.message}
+        {...register('lvl', {required: 'Укажите: Уровень подписки'})}
+        fullWidth 
+      />
+
+      <TextField 
+        className={styles.field} 
+        label="Дата выдачи" 
+        error = {Boolean(errors.date?.message)}
+        helperText= {errors.date?.message}
+        {...register('date', {required: 'Укажите: Дата выдачи'})}
+        fullWidth 
+      />
+
+      <TextField 
+        className={styles.field} 
+        label="Наличие подписки" 
+        error = {Boolean(errors.availability?.message)}
+        helperText= {errors.availability?.message}
+        {...register('availability', {required: 'Укажите: Наличие подписки'})}
+        fullWidth 
+      />
+
+      <TextField 
+        className={styles.field} 
+        label="Срок действия" 
+        error = {Boolean(errors.term?.message)}
+        helperText= {errors.term?.message}
+        {...register('term', {required: 'Укажите: Срок действия'})}
+        fullWidth 
+      />
+      
+
       <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
-        Войти
+        Зарегистрировать
       </Button>
 
     </form>
