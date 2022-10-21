@@ -15,7 +15,6 @@ export const Header = () => {
     if(window.confirm('Вы действительно хотите выйти?')){
       dispatch(logout())
       window.localStorage.removeItem('token');
-      return <Navigate to="/" />;
     }
   };
 
