@@ -10,6 +10,7 @@ import { useNavigate, Navigate, useParams } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import styles from "./Office.module.scss";
+import TextField from "@mui/material/TextField";
 
 export const Office = () => {
 
@@ -43,8 +44,33 @@ export const Office = () => {
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        В разработке
+        Вход в аккаунт
       </Typography>
+    <form onSubmit={handleSubmit(onSubmit)}>
+
+      <TextField
+        className={styles.field}
+        label="E-Mail"
+        error = {Boolean(errors.email?.message)}
+        helperText= {errors.email?.message}
+        type="email"
+        {...register('email', {required: 'Укажите почту'})}
+        fullWidth
+      />
+
+      <TextField className={styles.field} 
+        label="Пароль" 
+        error = {Boolean(errors.password?.message)}
+        helperText= {errors.password?.message}
+        {...register('password', {required: 'Укажите пароль'})}
+        fullWidth 
+      />
+
+      <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
+        Войти
+      </Button>
+
+    </form>
     </Paper>
   );
 };

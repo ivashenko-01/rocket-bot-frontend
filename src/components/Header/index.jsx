@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectIsAuth } from '../../redux/slices/auth'
 import Button from '@mui/material/Button';
-
+import { useNavigate, Navigate, useParams } from "react-router-dom";
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
 
@@ -15,6 +15,7 @@ export const Header = () => {
     if(window.confirm('Вы действительно хотите выйти?')){
       dispatch(logout())
       window.localStorage.removeItem('token');
+      return <Navigate to="/" />;
     }
   };
 
