@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsAuth } from '../../redux/slices/auth';
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import styles from "./Office.module.scss";
 
 export const Office = () => {
 
