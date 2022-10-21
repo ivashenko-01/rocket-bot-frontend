@@ -8,11 +8,10 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 
 import styles from "./Podpiska.module.scss";
-import { fetchPodpiska, selectIsAuth } from '../../redux/slices/auth'
+import { fetchPodpiska } from '../../redux/slices/podpiska'
 
 export const Podpiska = () => {
 
-  const isAuth = useSelector(selectIsAuth)
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
     defaultValues: {
