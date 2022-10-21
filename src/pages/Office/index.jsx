@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsAuth } from '../../redux/slices/auth';
 import { useNavigate, Navigate, useParams } from "react-router-dom";
+import Paper from "@mui/material/Paper";
 
 export const Office = () => {
 
