@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
-import axios from "../axios";
+import axios from '../../axios';
 import ReactMarkdown from "react-markdown";
 
 export const Office = () => {
