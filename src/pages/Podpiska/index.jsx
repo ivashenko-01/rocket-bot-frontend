@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 
 import styles from "./Podpiska.module.scss";
-import { fetchAuth, selectIsAuth } from '../../redux/slices/auth'
+import { fetchPodpiska, selectIsAuth } from '../../redux/slices/auth'
 
 export const Podpiska = () => {
 
@@ -23,7 +23,7 @@ export const Podpiska = () => {
   })
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchAuth(values));
+    const data = await dispatch(fetchPodpiska(values));
     console.log(data);
 
     if(!data.payload){
