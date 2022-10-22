@@ -27,7 +27,7 @@ export const Podpiska = () => {
   })
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchRegister(values));
+    const data = await dispatch(fetchPodpiska(values));
 
     if(!data.payload){
       return alert('Не удалось зарегистрировать подписку');
