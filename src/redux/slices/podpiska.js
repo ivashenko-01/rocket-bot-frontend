@@ -42,8 +42,8 @@ const podpiskaSlice = createSlice({
     }
 })
 
-export const selectIsAuth = (state) => Boolean(state.auth.data);
+export const selectIsPodpiska = (state) => Boolean(state.podpiska.data);
 
 export const podpiskaReducer = podpiskaSlice.reducer;
 
-export const { logout } = authSlice.actions;
+export const { logout } = podpiskaSlice.actions;
