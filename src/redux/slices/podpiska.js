@@ -3,7 +3,7 @@ import axios from "../../axios";
 
 
 export const fetchPodpiska = createAsyncThunk('podpiska/fetchPodpiska', async (params) => {
-    const { data } = await axios.get('/podpiska', params);
+    const { data } = await axios.post('/podpiska', params);
     return data;
 })
 
@@ -16,8 +16,8 @@ const initialState = {
 
 };
 
-const authSlice = createSlice({
-    name: 'auth',
+const podpiskaSlice = createSlice({
+    name: 'podpiska',
     initialState,
     reducers: {
         logout: (state) => {
@@ -44,6 +44,6 @@ const authSlice = createSlice({
 
 export const selectIsAuth = (state) => Boolean(state.auth.data);
 
-export const podpiskaReducer = authSlice.reducer;
+export const podpiskaReducer = podpiskaSlice.reducer;
 
 export const { logout } = authSlice.actions;
