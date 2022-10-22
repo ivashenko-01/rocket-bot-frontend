@@ -27,10 +27,16 @@ export const Podpiska = () => {
   })
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchPodpiska(values));
+    const data = await dispatch(fetchRegister(values));
+
+    if(!data.payload){
+      return alert('Не удалось зарегистрировать подписку');
+    }
+
+    if(data.payload){
+      return alert('Подписка зарегистрирована');
+    }
   }
-
-
 
   return (
     <Paper classes={{ root: styles.root }}>
