@@ -10,8 +10,8 @@ import { useForm } from "react-hook-form";
 import styles from "./Podpiska.module.scss";
 import { fetchPodpiska } from '../../redux/slices/podpiska'
 
-export const Podpiska = () => {
 
+export const Podpiska = () => {
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
     defaultValues: {
@@ -28,16 +28,8 @@ export const Podpiska = () => {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchPodpiska(values));
-    console.log(data);
-
-    if(!data.payload){
-      return alert('Не удалось зарегистрировать подписку');
-    }
-
-    if('token' in data.payload){
-      window.localStorage.setItem('token', data.payload.token)
-    }
   }
+
 
 
   return (
@@ -119,3 +111,4 @@ export const Podpiska = () => {
     </Paper>
   );
 };
+
