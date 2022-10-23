@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from "@mui/material/Container";
 
 import { Header } from "./components";
-import { Home, FullPost, Registration, AddPost, Login, Podpiska } from "./pages";
+import { Home, FullPost, Registration, AddPost, Login, Podpiska, Office } from "./pages";
 import React from "react";
 import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 
@@ -33,6 +33,7 @@ function App() {
           <Route path = "/login" element ={<Login />} />
           <Route path = "/register" element ={<Registration />} />
           <Route path = "/podpiska" element ={<Podpiska />} />
+          <Route path = "/office" element ={<Office />} />
         </Routes>
       </Container>
     </>
