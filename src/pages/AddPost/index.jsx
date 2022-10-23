@@ -120,10 +120,13 @@ export const AddPost = () => {
   console.log(isAuth);
 
   if(!window.localStorage.getItem('token') && !isAuth) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
-    if(isAuthAdmin === false) {
-      return <Navigate to="/" />;
-    }
+    return <Navigate to="/" />;
   }
+
+  if(!isAuthAdmin){ 
+    return <Navigate to="/" />;
+  }
+
 
   return (
     <Paper style={{ padding: 30 }}>
