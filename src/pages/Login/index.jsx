@@ -14,8 +14,7 @@ export const Login = () => {
 
   const isAuth = useSelector(selectIsAuth)
   const isAuthAdmin = useSelector(selectIsAuthAdmin);
-  console.log(isAuthAdmin);
-  
+
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
     defaultValues: {
@@ -28,6 +27,7 @@ export const Login = () => {
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
     console.log(data);
+    console.log(isAuthAdmin);
 
     if(!data.payload){
       return alert('Не удалось авторизоваться');
