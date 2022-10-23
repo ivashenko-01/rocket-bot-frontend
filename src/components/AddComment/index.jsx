@@ -17,6 +17,16 @@ export const Index = () => {
     return;
   }
 
+  const onSubmit = async () => {
+    try {
+      console.warn(error);
+      alert('На данный момент не получится отправить комментарий');
+    } catch (error) {
+      console.warn(error);
+      alert('Ошибка при отправке комментария');
+    }
+  }
+
 
   return (
     <>
@@ -33,7 +43,7 @@ export const Index = () => {
             multiline
             fullWidth
           />
-          <Button variant="contained">Отправить</Button>
+          <Button onClick={onSubmit} variant="contained">Отправить</Button>
         </div>
       </div>
     </>
