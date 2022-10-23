@@ -14,7 +14,6 @@ export const Header = () => {
 
   if(isAuthAdmin === "ivashenko-01@mail.ru"){
     isAuthAdmin = true;
-    
     return (
       <div className={styles.root}>
         <Container maxWidth="lg">
@@ -55,6 +54,14 @@ export const Header = () => {
   } else {
     isAuthAdmin = false;
   }
+
+  const onClickLogout = () => {
+    if(window.confirm('Вы действительно хотите выйти?')){
+      dispatch(logout())
+      window.localStorage.removeItem('token');
+      window.localStorage.removeItem('email');
+    }
+  };
 
   return (
     <div className={styles.root}>
