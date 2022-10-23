@@ -28,6 +28,9 @@ export const Header = () => {
             <Link className={styles.logo} to="/">
               <div>ROCKET BOT</div>
             </Link>
+            <Link to="/admin">
+              <Button variant="contained" color="error">Панель Администратора</Button>
+            </Link>
             <div className={styles.buttons}>
   
               {isAuth ? (
