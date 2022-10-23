@@ -34,7 +34,7 @@ export const Header = () => {
               {isAuth ? (
                 <>
                   <Link to="/admin">
-                    <Button variant="contained" color="error">Панель Администратора</Button>
+                    <Button variant="contained" color="info">Панель Администратора</Button>
                   </Link>
                   <Link to="/add-post">
                     <Button variant="contained">Написать статью</Button>
