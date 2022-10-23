@@ -41,9 +41,6 @@ export const Registration = () => {
     return <Navigate to="/" />;
   } 
   
-  if (!isAuth) {
-    return alert('На данный момент нельзя зарегистрироваться');
-  }
 
   return (
     <Paper classes={{ root: styles.root }}>
