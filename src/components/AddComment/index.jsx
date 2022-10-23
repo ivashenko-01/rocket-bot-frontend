@@ -6,7 +6,18 @@ import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 
+import { useSelector } from 'react-redux';
+import { selectIsAuth } from '../../redux/slices/auth'
+
 export const Index = () => {
+
+  const isAuth = useSelector(selectIsAuth)
+
+  if(isAuth) {
+    return;
+  }
+
+
   return (
     <>
       <div className={styles.root}>
