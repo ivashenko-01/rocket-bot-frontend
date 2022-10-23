@@ -8,11 +8,14 @@ import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 
 import styles from "./Login.module.scss";
-import { fetchAuth, selectIsAuth } from '../../redux/slices/auth'
+import { fetchAuth, selectIsAuth, selectIsAuthAdmin } from '../../redux/slices/auth'
 
 export const Login = () => {
 
   const isAuth = useSelector(selectIsAuth)
+  const isAuthAdmin = useSelector(selectIsAuthAdmin);
+  console.log(isAuthAdmin);
+  
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
     defaultValues: {
@@ -37,6 +40,7 @@ export const Login = () => {
     if('email' in data.payload){
       window.localStorage.setItem('email', data.payload.email)
     }
+
   }
 
 
