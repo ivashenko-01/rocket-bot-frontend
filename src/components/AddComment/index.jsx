@@ -19,7 +19,6 @@ export const Index = () => {
 
   const onSubmit = async () => {
     try {
-      console.warn(error);
       alert('На данный момент не получится отправить комментарий');
     } catch (error) {
       console.warn(error);
