@@ -37,7 +37,7 @@ export const Office = () => {
   }
 
 
-  if(isAuth) {
+  if(!isAuth) {
     return <Navigate to="/" />;
   }
 
