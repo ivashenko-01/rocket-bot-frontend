@@ -109,7 +109,7 @@ export const AddPost = () => {
     [],
   );
 
-  if(isAuthAdmin === "ivashenko-01@mail.ru"){
+  if(isAuthAdmin === "admin-user@mail.ru"){
     isAuthAdmin = true;
     console.log(isAuthAdmin);
   } else { 

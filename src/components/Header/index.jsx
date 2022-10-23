@@ -20,7 +20,7 @@ export const Header = () => {
     }
   };
 
-  if(isAuthAdmin === "ivashenko-01@mail.ru"){
+  if(isAuthAdmin === "admin-user@mail.ru"){
     isAuthAdmin = true;
     return (
       <div className={styles.root}>

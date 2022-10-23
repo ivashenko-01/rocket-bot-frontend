@@ -39,6 +39,8 @@ export const Registration = () => {
 
   if(isAuth) {
     return <Navigate to="/" />;
+  } else {
+    return alert('На данный момент нельзя зарегистрироваться');
   }
 
   return (
