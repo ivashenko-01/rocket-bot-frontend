@@ -13,7 +13,7 @@ export const Index = () => {
 
   const isAuth = useSelector(selectIsAuth)
 
-  if(isAuth) {
+  if(!isAuth) {
     return;
   }
 
