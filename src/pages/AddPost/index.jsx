@@ -111,8 +111,10 @@ export const AddPost = () => {
 
   if(isAuthAdmin === "ivashenko-01@mail.ru"){
     isAuthAdmin = true;
+    console.log(isAuthAdmin);
   } else { 
     isAuthAdmin = false;
+    console.log(isAuthAdmin);
   }
 
   if(!window.localStorage.getItem('token') && !isAuth && !isAuthAdmin) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
