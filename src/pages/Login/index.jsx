@@ -13,6 +13,7 @@ import { fetchAuth, selectIsAuth, selectIsAuthAdmin } from '../../redux/slices/a
 export const Login = () => {
 
   const isAuth = useSelector(selectIsAuth)
+  const isAuthAdmin = useSelector(selectIsAuthAdmin);
 
   const dispatch = useDispatch();
   const {register, handleSubmit, setError, formState: { errors,   isValid}} = useForm({
@@ -26,9 +27,6 @@ export const Login = () => {
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
     console.log(data);
-
-    const isAuthAdmin = useSelector(selectIsAuthAdmin);
-    console.log(isAuthAdmin);
 
     if(!data.payload){
       return alert('Не удалось авторизоваться');
@@ -46,6 +44,7 @@ export const Login = () => {
 
 
   if(isAuth) {
+    console.log(isAuthAdmin);
     return <Navigate to="/" />;
   }
 
