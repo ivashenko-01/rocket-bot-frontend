@@ -27,6 +27,10 @@ export const Registration = () => {
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
 
+    if (!isAuth) {
+      return alert('На данный момент нельзя зарегистрироваться');
+    }
+    
     if(!data.payload){
       return alert('Не удалось зарегистрироваться');
     }
