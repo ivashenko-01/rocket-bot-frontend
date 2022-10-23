@@ -37,7 +37,7 @@ export const FullPost = () => {
               user= {data.user}
               createdAt={data.createdAt}
               viewsCount={data.viewsCount}
-              commentsCount={3}
+              commentsCount={2}
               tags={data.tags}
         isFullPost
       >
@@ -47,17 +47,17 @@ export const FullPost = () => {
         items={[
           {
             user: {
-              fullName: "Вася Пупкин",
-              avatarUrl: "https://mui.com/static/images/avatar/1.jpg",
+              fullName: "Quiet Rabbit",
+              avatarUrl: "https://ibb.co/yfNwMNX",
             },
-            text: "Это тестовый комментарий 555555",
+            text: "В будущем к каждому посту можно будет прикреплять комментарии.",
           },
           {
             user: {
-              fullName: "Иван Иванов",
-              avatarUrl: "https://mui.com/static/images/avatar/2.jpg",
+              fullName: "Rocket Bot",
+              avatarUrl: "https://ibb.co/sVD8Q6f",
             },
-            text: "When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top",
+            text: "На данный момент Вы не сможете их отправлять.",
           },
         ]}
         isLoading={false}
