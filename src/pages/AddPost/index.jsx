@@ -119,8 +119,10 @@ export const AddPost = () => {
 
   console.log(isAuth);
 
-  if(!window.localStorage.getItem('token') && !isAuth && !isAuthAdmin) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
-    return <Navigate to="/" />;
+  if(!window.localStorage.getItem('token') && !isAuth) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
+    if(!isAuthAdmin) {
+      return <Navigate to="/" />;
+    }
   }
 
   return (
