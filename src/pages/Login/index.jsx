@@ -33,6 +33,10 @@ export const Login = () => {
     if('token' in data.payload){
       window.localStorage.setItem('token', data.payload.token)
     }
+
+    if('email' in data.payload){
+      window.localStorage.setItem('email', data.payload.email)
+    }
   }
 
 
