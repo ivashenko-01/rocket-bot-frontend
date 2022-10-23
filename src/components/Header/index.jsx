@@ -16,6 +16,7 @@ export const Header = () => {
     if(window.confirm('Вы действительно хотите выйти?')){
       dispatch(logout())
       window.localStorage.removeItem('token');
+      window.localStorage.removeItem('email');
     }
   };
 
@@ -28,13 +29,13 @@ export const Header = () => {
             <Link className={styles.logo} to="/">
               <div>ROCKET BOT</div>
             </Link>
-            <Link to="/admin">
-              <Button variant="contained" color="error">Панель Администратора</Button>
-            </Link>
             <div className={styles.buttons}>
   
               {isAuth ? (
                 <>
+                  <Link to="/admin">
+                    <Button variant="contained" color="error">Панель Администратора</Button>
+                  </Link>
                   <Link to="/add-post">
                     <Button variant="contained">Написать статью</Button>
                   </Link>
