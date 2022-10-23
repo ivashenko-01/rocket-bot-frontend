@@ -12,6 +12,14 @@ export const Header = () => {
   const isAuth = useSelector(selectIsAuth)
   let isAuthAdmin = window.localStorage.getItem('email');
 
+  const onClickLogout = () => {
+    if(window.confirm('Вы действительно хотите выйти?')){
+      dispatch(logout())
+      window.localStorage.removeItem('token');
+      window.localStorage.removeItem('email');
+    }
+  };
+
   if(isAuthAdmin === "ivashenko-01@mail.ru"){
     isAuthAdmin = true;
     return (
@@ -54,13 +62,6 @@ export const Header = () => {
   } else {
     isAuthAdmin = false;
   }
-
-  const onClickLogout = () => {
-    if(window.confirm('Вы действительно хотите выйти?')){
-      dispatch(logout())
-      window.localStorage.removeItem('token');
-    }
-  };
 
   return (
     <div className={styles.root}>
