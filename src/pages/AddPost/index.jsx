@@ -19,6 +19,7 @@ export const AddPost = () => {
   const navigate = useNavigate();
 
   const isAuth = useSelector(selectIsAuth) // --- Проверка на авторизированность
+  let isAuthAdmin = window.localStorage.getItem('email');
 
   const [isLoading, setLoading] = React.useState(false);
 
@@ -108,7 +109,13 @@ export const AddPost = () => {
     [],
   );
 
-  if(!window.localStorage.getItem('token') && !isAuth) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
+  if(isAuthAdmin === "ivashenko-01@mail.ru"){
+    isAuthAdmin = true;
+  } else { 
+    isAuthAdmin = false;
+  }
+
+  if(!window.localStorage.getItem('token') && !isAuth && !isAuthAdmin) { // --- Если не авторизирован, то выкидывать со страницы добавления статьи
     return <Navigate to="/" />;
   }
 
